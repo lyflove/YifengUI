@@ -167,8 +167,5 @@ export default {
 .loadingNotWhite
     &:before  
         border 2px solid black
-.yfbutton-icon
-    &:before
-        content '\F0C8'
 
 </style>

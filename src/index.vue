@@ -1,6 +1,5 @@
 <template>
   <div>
-
       <yf-button text=""  :normal="false"  :size="{h:'30px',w:'180px'}">
           哈哈 
       </yf-button>
@@ -44,11 +43,10 @@
 </template>
 
 <script>
-import yfButton from '../packages/yfButton/index'
+// import yfButton from '../packages/yfButton/index'
 export default {
   name:'App',
   components:{
-      yfButton
   },
   data(){
       return{
