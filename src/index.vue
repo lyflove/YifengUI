@@ -83,8 +83,8 @@ export default {
       return{
           buttonText:'哈哈',
           lists:['1','2'],
-          backgroundImage:'../../../src/assets/backgroundImage.png',
-          imageLists:['../../../src/assets/left/1.png','../../../src/assets/left/2.png'],
+        //   backgroundImage:'../../../src/assets/backgroundImage.png',
+        //   imageLists:['../../../src/assets/left/1.png','../../../src/assets/left/2.png'],
           originLists:[{
               modName:'菜单1',
               map:{
