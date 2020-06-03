@@ -13,7 +13,7 @@
             background:buttonBgColor(),
             color:buttonColor(),
             border:buttonBorder(),
-            cursor:disabled?'not-allowed':'pointer',
+            cursor:disabled?'not-allowed':(loading?'':'pointer'),
             opacity:disabled?0.5:1,
             borderRadius:round?round+'px':0,
             display:block?'block':''
@@ -27,11 +27,13 @@
         <span v-if="!loading&&text!==''">
            {{text}}
         </span>
-        <span v-if="!loading&&text===''">
+        <span v-if="!loading&&text===''&&$slots.default">
             <slot></slot>
         </span>
         
-        <i v-if="loading" class="loading" :class="buttonBgColor()==='white'?'loadingNotWhite':''">{{loadingText}}</i>
+        <i v-if="loading" class="loading" :class="[normal?'yfbutton-normal':'yfbutton-italic',
+            buttonBgColor()==='white'?'loadingNotWhite':'']
+            ">{{loadingText}}</i>
         
 
     </button>
@@ -98,7 +100,7 @@ export default {
             let colorMap = {
                 'default':'white',
                 'primary':'#33CC33',
-                'info':'#3399FF',
+                'info':'rgba(33,127,221,0.9)',
                 'danger':'#CC0000',
                 'warning':'#CC9933'
             };
@@ -158,7 +160,7 @@ export default {
         border-radius 50%
         vertical-align -10%
         clip-path polygon(0% 0%, 100% 0% ,100% 80%, 0% 50%)
-        animation rotating 2s cubic-bezier(.5 ,.5, .5, .8) infinite
+        animation rotating 1s linear infinite
         @keyframes rotating 
             from
                 -webkit-transform  rotate(0deg)

@@ -1,4 +1,4 @@
-import yfButton from './src/index.vue'
+import yfButton from './src/button.vue'
 
 yfButton.install = function(Vue){
     Vue.component(yfButton.name,yfButton)

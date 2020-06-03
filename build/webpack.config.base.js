@@ -37,6 +37,19 @@ module.exports = {
         })
       },
       {
+        test: /\.jpg|png|gif|bmp|jpeg$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit:10240,
+              name:"[name].[ext]",
+              esModule: false
+            }
+          }
+        ]
+      },
+      {
         test:/\.css$/,
         loader:'style-loader!css-loader!stylus-loader'
       }
